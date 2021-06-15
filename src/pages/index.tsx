@@ -1,5 +1,10 @@
+import Nav from '../components/Nav'
+
+
 function HomePage() {
-	return <div>Welcome to Next.js!</div>;
+  return (
+    <Nav/>
+  );
 }
 
 export default HomePage;
