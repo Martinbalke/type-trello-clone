@@ -1,34 +1,32 @@
-import { RepeatClockIcon } from '@chakra-ui/icons';
 import { Box, Flex, Heading } from '@chakra-ui/layout';
+import { ComponentWithAs, IconProps } from '@chakra-ui/react';
 import React from 'react';
+import { Board } from '../../types/boardRelated';
 import BoardPreview from './BoardPreview';
 
 interface Props {
-  recentlyViewed: [Board],
-  boards: [Board]
+	heading: string;
+	icon: ComponentWithAs<'svg', IconProps>;
+	boards: [Board];
 }
 
-interface Board {
-  title: string,
-  favorite: boolean,
-  backgroundImage?: string
-}
-
-const BoardPreviewContainer = ({ recentlyViewed, boards }: Props) => {
-  return (
+const BoardPreviewContainer = ({ heading, boards, icon }: Props) => {
+	return (
 		<Flex flexDirection='column'>
 			<Flex>
 				<Box>
-          <RepeatClockIcon />
-          <Heading>Recently Viewed</Heading>
-          <Flex>
-            {recentlyViewed.map(board => <BoardPreview title={board.title} favorite={ board.favorite}/>) }
-          </Flex>
+					{icon}
+					<Heading>{heading}</Heading>
+					<Flex>
+						{boards.map(
+							(board: Board): JSX.Element => (
+								<BoardPreview title={board.title} favorite={board.favorite} />
+							)
+						)}
+					</Flex>
 				</Box>
 			</Flex>
-      <Flex>
-        
-      </Flex>
+			<Flex></Flex>
 		</Flex>
 	);
 };
