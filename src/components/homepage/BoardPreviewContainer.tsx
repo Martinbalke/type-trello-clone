@@ -1,13 +1,12 @@
 import { Box, Flex, Heading } from '@chakra-ui/layout';
-import { ComponentWithAs, IconProps } from '@chakra-ui/react';
 import React from 'react';
 import { Board } from '../../types/boardRelated';
 import BoardPreview from './BoardPreview';
 
 interface Props {
 	heading: string;
-	icon: ComponentWithAs<'svg', IconProps>;
-	boards: [Board];
+	icon: JSX.Element;
+	boards: Array<Board>;
 }
 
 const BoardPreviewContainer = ({ heading, boards, icon }: Props) => {
@@ -20,7 +19,7 @@ const BoardPreviewContainer = ({ heading, boards, icon }: Props) => {
 					<Flex>
 						{boards.map(
 							(board: Board): JSX.Element => (
-								<BoardPreview title={board.title} favorite={board.favorite} />
+                <BoardPreview title={board.title} favorite={board.favorite} backgroundImage={ board.backgroundImage}/>
 							)
 						)}
 					</Flex>
