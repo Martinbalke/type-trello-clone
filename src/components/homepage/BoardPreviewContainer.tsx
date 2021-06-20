@@ -14,12 +14,14 @@ const BoardPreviewContainer = ({ heading, boards, icon }: Props) => {
 		<Flex flexDirection='column'>
 			<Flex>
 				<Box>
+					<Flex>
 					{icon}
 					<Heading>{heading}</Heading>
+					</Flex>
 					<Flex>
 						{boards.map(
 							(board: Board): JSX.Element => (
-                <BoardPreview title={board.title} favorite={board.favorite} backgroundImage={ board.backgroundImage}/>
+								<BoardPreview key={board.title} title={board.title} favorite={board.favorite} backgroundImage={ board.backgroundImage}/>
 							)
 						)}
 					</Flex>

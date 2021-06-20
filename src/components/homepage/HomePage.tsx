@@ -18,7 +18,7 @@ const sampleBoards: Array<Board> = [
 const HomePage = () => {
   return (
     <Flex>
-      <BoardPreviewContainer icon={<RepeatClockIcon />} heading='Recenty Viewed' boards={sampleBoards }/>
+      <BoardPreviewContainer icon={<RepeatClockIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
     </Flex>
   );
 };
