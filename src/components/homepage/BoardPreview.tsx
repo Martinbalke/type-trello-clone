@@ -3,12 +3,12 @@ import { StarIcon } from '@chakra-ui/icons';
 import { Flex, Text, } from '@chakra-ui/layout';
 import React from 'react';
 import { Board } from '../../types/boardRelated';
-const sampleBackground = require('../../assets/sampleBackground.jpeg')
+import sampleBackground from '../../../public/sampleBackground.jpeg'
 
 
 const BoardPreview = ({backgroundImage, title, favorite}: Board) => {
   return (
-    <Flex bgImage={ backgroundImage || sampleBackground} bgPosition='center' bgSize='cover' p='2' m='2'>
+    <Flex bgImage={  sampleBackground} bgPosition='center' bgSize='cover' p='2' m='2'>
       <Text fontSize='l' fontWeight='700' color='white'>{ title }</Text>
       <IconButton aria-label='favorite board' children={<StarIcon fill={favorite ? 'yellow' : 'none' }/>}/>
     </Flex>
