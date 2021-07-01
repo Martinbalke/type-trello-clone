@@ -1,4 +1,4 @@
-import { RepeatClockIcon } from '@chakra-ui/icons';
+import {  TimeIcon } from '@chakra-ui/icons';
 import { Flex } from '@chakra-ui/layout';
 import React from 'react';
 import { Board } from '../../types/boardRelated';
@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
 		<Flex my='10' mx='24'>
 			<SideBar/>
-      <BoardPreviewContainer  icon={<RepeatClockIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
+      <BoardPreviewContainer  icon={<TimeIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
     </Flex>
   );
 };
