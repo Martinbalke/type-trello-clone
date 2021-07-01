@@ -19,7 +19,7 @@ const BoardPreview = ({ backgroundImage, title, favorite }: Board) => {
 			<Box w='100%' h='100%' position='absolute' top='0' zIndex='-1'>
 				<Image src='/sampleBackground.jpeg' layout='fill' />
 			</Box>
-			<Text fontSize='xl' fontWeight='700' color='white' m='4'>
+			<Text fontSize='xl' fontWeight='700' color='white' mx='4' my='2'>
 				{title}
 			</Text>
 			<IconButton
