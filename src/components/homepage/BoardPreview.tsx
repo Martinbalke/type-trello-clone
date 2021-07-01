@@ -4,7 +4,7 @@ import { Flex, Text,Box } from '@chakra-ui/layout';
 import React from 'react';
 import { Board } from '../../types/boardRelated';
 import Image from 'next/image';
-import sampleBackground from '/sampleBackground.jpeg'
+
 
 const BoardPreview = ({ backgroundImage, title, favorite }: Board) => {
 	return (

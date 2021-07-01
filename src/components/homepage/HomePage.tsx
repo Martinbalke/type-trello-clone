@@ -3,6 +3,7 @@ import { Flex } from '@chakra-ui/layout';
 import React from 'react';
 import { Board } from '../../types/boardRelated';
 import BoardPreviewContainer from './BoardPreviewContainer';
+import SideBar from './SideBar';
 
 const sampleBoards: Array<Board> = [
 	{
@@ -17,8 +18,9 @@ const sampleBoards: Array<Board> = [
 
 const HomePage = () => {
   return (
-    <Flex>
-      <BoardPreviewContainer icon={<RepeatClockIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
+		<Flex my='10' mx='24'>
+			<SideBar/>
+      <BoardPreviewContainer  icon={<RepeatClockIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
     </Flex>
   );
 };
