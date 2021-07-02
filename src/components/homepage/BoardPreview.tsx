@@ -1,12 +1,13 @@
 import { IconButton } from '@chakra-ui/button';
 import { StarIcon } from '@chakra-ui/icons';
 import { Flex, Text,Box } from '@chakra-ui/layout';
-import React from 'react';
+import React, { useState } from 'react';
 import { Board } from '../../types/boardRelated';
 import Image from 'next/image';
 
 
 const BoardPreview = ({ backgroundImage, title, favorite }: Board) => {
+	const [localFavorite, setLocalFavorite] = useState(favorite);
 	return (
 		<Flex
 			m='2'
@@ -28,9 +29,9 @@ const BoardPreview = ({ backgroundImage, title, favorite }: Board) => {
 				position='absolute'
 				bottom='0'
 				right='0'
-        color={favorite ? 'gold' : 'black'}
-        _hover={{ bg: 'none', color: favorite ? 'black' : 'gold' }}
-        // onClick={ () => favorite = !favorite }
+        color={localFavorite ? 'gold' : 'black'}
+        _hover={{ bg: 'none', color: localFavorite ? 'black' : 'gold' }}
+				onClick={ (e) => setLocalFavorite(!localFavorite) }
 				children={<StarIcon />}
 			/>
 		</Flex>
