@@ -1,7 +1,7 @@
 import {  TimeIcon } from '@chakra-ui/icons';
 import { Flex } from '@chakra-ui/layout';
 import React from 'react';
-import { Board } from '../../types/boardRelated';
+import { Board } from '../../types/board';
 import BoardPreviewContainer from './BoardPreviewContainer';
 import SideBar from './SideBar';
 

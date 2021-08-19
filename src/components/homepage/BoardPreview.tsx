@@ -2,7 +2,7 @@ import { IconButton } from '@chakra-ui/button';
 import { StarIcon } from '@chakra-ui/icons';
 import { Flex, Text,Box } from '@chakra-ui/layout';
 import React, { useState } from 'react';
-import { Board } from '../../types/boardRelated';
+import { Board } from '../../types/board';
 import Image from 'next/image';
 
 
