@@ -1,28 +1,25 @@
-import {  TimeIcon } from '@chakra-ui/icons';
+import { TimeIcon } from '@chakra-ui/icons';
 import { Flex } from '@chakra-ui/layout';
-import React from 'react';
-import { Board } from '../../types/board';
+import React, { useContext} from 'react';
+import { observer } from 'mobx-react-lite';
+import Store from '../../store';
 import BoardPreviewContainer from './BoardPreviewContainer';
 import SideBar from './SideBar';
 
-const sampleBoards: Array<Board> = [
-	{
-		title: 'Some board',
-		favorite: true,
-	},
-	{
-		title: 'Some board 2',
-		favorite: false,
-	},
-];
-
 const HomePage = () => {
-  return (
+	const store = useContext(Store);
+	const { boards } = store;
+
+	return (
 		<Flex my='10' mx='24'>
-			<SideBar/>
-      <BoardPreviewContainer  icon={<TimeIcon h='40px' w='30px' />} heading='Recenty Viewed' boards={sampleBoards }/>
-    </Flex>
-  );
+			<SideBar />
+			<BoardPreviewContainer
+				icon={<TimeIcon h='40px' w='30px' />}
+				heading='Recenty Viewed'
+				boards={boards}
+			/>
+		</Flex>
+	);
 };
 
-export default HomePage;
+export default observer(HomePage);

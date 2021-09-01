@@ -1,37 +1,46 @@
-
-import { observable, action} from 'mobx';
+import { observable, action } from 'mobx';
 import { ListInterface } from './List';
 import { uuid } from 'uuidv4';
+import { makeObservable } from 'mobx';
 
 export interface BoardInterface {
-  id: string,
+	id: string;
 	title: string;
 	favorite: boolean;
-  backgroundImage?: string;
-  lists?: Array<ListInterface>
+	backgroundImage?: string;
+	lists?: Array<ListInterface>;
 }
 
 export default class Board implements BoardInterface {
-  @observable id = uuid();
-	@observable title = '';
-  @observable favorite = false;
-  @observable backgroundImage = ''
-  @observable lists: Array<ListInterface> = [];
+	id = uuid();
+	title = '';
+	favorite = false;
+	backgroundImage = '';
+	lists: Array<ListInterface> = [];
 
+	constructor() {
+		makeObservable(this, {
+			id: observable,
+			title: observable,
+			favorite: observable,
+			backgroundImage: observable,
+      lists: observable,
+      updateBoard: action,
+      toggleFavorite: action,
+      addList: action
+		});
+	}
 
-  @action
-  updateBoard(title:string , backgroundImage:string) {
-    this.title = title;
-    this.backgroundImage = backgroundImage;
-  }
+	updateBoard(title: string, backgroundImage: string) {
+		this.title = title;
+		this.backgroundImage = backgroundImage;
+	}
 
-  @action
-  toggleFavorite() {
-    return this.favorite = !this.favorite;
-  }
+	toggleFavorite() {
+		return (this.favorite = !this.favorite);
+	}
 
-  @action
-  addList(list: ListInterface) {
-    this.lists.push(list);
-    }
+	addList(list: ListInterface) {
+		this.lists.push(list);
+	}
 }
