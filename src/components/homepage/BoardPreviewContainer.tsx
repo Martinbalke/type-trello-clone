@@ -14,7 +14,7 @@ const BoardPreviewContainer = ({ heading, boards, icon }: Props) => {
 		<Flex flexDirection='column'>
 			<Flex>
 				<Box>
-					<Flex alignItems='center'>
+					<Flex alignItems='center' ml='2'>
 					{icon}
 					<Heading fontSize='xl' ml='2'>{heading}</Heading>
 					</Flex>
